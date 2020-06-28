@@ -15,28 +15,14 @@
     <div class="article-list-holder">
       <h2>Normal</h2>
       <ul>
-        <li *ngFor="let item of normal_articles" (click) = "open(item.url)">
-          <div class="body">
-            <div class="name">{{item.title}}</div>
-            <div [innerHTML]="item.description"></div>
-          </div>
-          <div class="footer">
-            <span style="font-weight: bold;">{{item.author}}</span>
-            <span>{{item.publishedAt | slice:0:10}}</span>
-          </div>
+        <li *ngFor="let item of normal_articles">
+          <app-normal-article [article] = "item"></app-normal-article>
         </li>
       </ul>
       <h2>Feature</h2>
       <ul>
         <li *ngFor="let item of feature_articles" class="active">
-          <div class="body">
-            <div class="name">{{item.title}}</div>
-            <img [src]="item.featureImgUrl" alt="news">
-          </div>
-          <div class="footer">
-            <span style="font-weight: bold;">{{item.author}}</span>
-            <span>{{item.publishedAt | slice:0:10}}</span>
-          </div>
+          <app-featured-article [article] = "item"></app-featured-article>
         </li>
       </ul>
     </div>

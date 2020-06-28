@@ -1,0 +1,8 @@
+<div class="body">
+  <div class="name">{{article.title}}</div>
+  <div [innerHTML]="article.description"></div>
+</div>
+<div class="footer">
+  <span style="font-weight: bold;">{{article.author}}</span>
+  <span>{{article.publishedAt | slice:0:10}}</span>
+</div>

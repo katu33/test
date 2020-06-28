@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ZyllemApiService } from './app.service';
+import { NormalArticleComponent } from './components/normal-article/normal-article.component';
+import { FeaturedArticleComponent } from './components/featured-article/featured-article.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NormalArticleComponent,
+    FeaturedArticleComponent
   ],
   imports: [
     BrowserModule
