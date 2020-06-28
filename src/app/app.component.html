@@ -1,0 +1,45 @@
+<div class="container">
+  <div style="text-align:center">
+    <img
+      alt="Zyllem Logo"
+      src="https://static.wixstatic.com/media/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.png/v1/fill/w_194,h_80,al_c,q_80,usm_0.66_1.00_0.01/15e42d_92ebfc9a2c37467ba65d2117dc5b9fa4~mv2_d_3850_1775_s_2.webp"
+    />
+  </div>
+
+  <h2>Articles</h2>
+  <h3>List of article goes here:</h3>
+
+  <!-- To put the articles inside this container -->
+  <div class="article-container">
+    <!-- Feel free to remove this holder -->
+    <div class="article-list-holder">
+      <h2>Normal</h2>
+      <ul>
+        <li *ngFor="let item of normal_articles" (click) = "open(item.url)">
+          <div class="body">
+            <div class="name">{{item.title}}</div>
+            <div [innerHTML]="item.description"></div>
+          </div>
+          <div class="footer">
+            <span style="font-weight: bold;">{{item.author}}</span>
+            <span>{{item.publishedAt | slice:0:10}}</span>
+          </div>
+        </li>
+      </ul>
+      <h2>Feature</h2>
+      <ul>
+        <li *ngFor="let item of feature_articles" class="active">
+          <div class="body">
+            <div class="name">{{item.title}}</div>
+            <img [src]="item.featureImgUrl" alt="news">
+          </div>
+          <div class="footer">
+            <span style="font-weight: bold;">{{item.author}}</span>
+            <span>{{item.publishedAt | slice:0:10}}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div><!--.article-container-->
+
+</div>
