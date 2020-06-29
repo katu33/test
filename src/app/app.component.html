@@ -16,16 +16,21 @@
       <h2>Normal</h2>
       <ul>
         <li *ngFor="let item of normal_articles">
-          <app-normal-article [article] = "item"></app-normal-article>
+          <app-normal-article [article] = "item" [articleTemplate] = "articleTemplate"></app-normal-article>
         </li>
       </ul>
       <h2>Feature</h2>
       <ul>
         <li *ngFor="let item of feature_articles" class="active">
-          <app-featured-article [article] = "item"></app-featured-article>
+          <app-featured-article [article] = "item" [articleTemplate] = "articleTemplate"></app-featured-article>
         </li>
       </ul>
     </div>
   </div><!--.article-container-->
 
+  <ng-template #articleTemplate let-article="item">
+    <span style="font-weight: bold;">{{article.author}}</span>
+    <span>{{article.publishedAt | date}}</span>
+  </ng-template>
+  
 </div>

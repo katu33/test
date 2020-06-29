@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { FeaturedArticle } from 'src/app/model/article';
 
 @Component({
@@ -8,6 +8,7 @@ import { FeaturedArticle } from 'src/app/model/article';
 })
 export class FeaturedArticleComponent implements OnInit {
   @Input() article: FeaturedArticle;
+  @Input() articleTemplate: TemplateRef<any>;
   constructor() { }
 
   ngOnInit() {

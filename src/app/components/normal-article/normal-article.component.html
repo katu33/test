@@ -3,6 +3,5 @@
   <div [innerHTML]="article.description"></div>
 </div>
 <div class="footer">
-  <span style="font-weight: bold;">{{article.author}}</span>
-  <span>{{article.publishedAt | slice:0:10}}</span>
+  <ng-container [ngTemplateOutlet] = "articleTemplate" [ngTemplateOutletContext] = "{ item: article }"></ng-container>
 </div>
